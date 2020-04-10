@@ -7,7 +7,7 @@ require_relative( '../song' )
 
 class TestSong < MiniTest::Test
 
-    # Songs should have an artist and title
+    # A song should have an artist and title
 
     def setup
         @song1 = Song.new("Coldplay", "Clocks")
