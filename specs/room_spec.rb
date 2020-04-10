@@ -4,6 +4,7 @@ Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 
 require_relative( '../room' )
 require_relative( '../guest' )
+require_relative( '../song' )
 
 
 class TestRoom < MiniTest::Test
@@ -16,6 +17,9 @@ class TestRoom < MiniTest::Test
 
         @guest1 = Guest.new("Janine", 100, "Don't stop me now")
         @guest2 = Guest.new("Jason", 50, "Believer")
+
+        @song1 = Song.new("Coldplay", "Clocks")
+        @song2 = Song.new("Imagine Dragons", "Believer")
     end
 
     def test_room_can_have_id()
@@ -45,5 +49,13 @@ class TestRoom < MiniTest::Test
         @room2.check_out(@guest1)
         assert_equal(1, @room2.occupants.count)
     end
+
+    def test_number_of_songs_on_playlist
+        assert_equal(0, @room1.number_of_songs)
+    end
+
+    # def test_room_can_have_playlist__no_songs_on_list
+    #   assert_equal(0, @room1.number_of_songs)  
+    # end
 
 end
