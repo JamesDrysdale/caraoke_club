@@ -10,8 +10,8 @@ class TestSong < MiniTest::Test
     # A song should have an artist and title
 
     def setup
-        @song1 = Song.new("Coldplay", "Clocks")
-        @song2 = Song.new("Imagine Dragons", "Believer")
+        @song1 = Song.new("Clocks", "Coldplay")
+        @song2 = Song.new("Believer", "Imagine Dragons")
     end
 
     def test_song_can_have_an_artist

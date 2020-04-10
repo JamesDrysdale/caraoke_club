@@ -27,4 +27,9 @@ class Room
         return @playlist.count
     end
 
+    def add_song(song)
+        @playlist.push(song) if(@playlist.include?(song) == false)
+        return @playlist.to_s
+    end
+
 end

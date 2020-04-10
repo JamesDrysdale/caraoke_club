@@ -50,12 +50,18 @@ class TestRoom < MiniTest::Test
         assert_equal(1, @room2.occupants.count)
     end
 
-    def test_number_of_songs_on_playlist
-        assert_equal(0, @room1.number_of_songs)
+    def test_room_can_have_playlist__no_songs_on_list
+        assert_equal([], @room1.playlist)
     end
 
-    # def test_room_can_have_playlist__no_songs_on_list
-    #   assert_equal(0, @room1.number_of_songs)  
-    # end
+    def test_room_can_have_playlist__no_songs_on_list
+      assert_equal(0, @room1.number_of_songs)  
+    end
+
+    def test_add_song_to_playlist
+        @room1.add_song(@song1)
+        @room1.add_song(@song2)
+        assert_equal(2, @room1.number_of_songs)
+    end
 
 end
