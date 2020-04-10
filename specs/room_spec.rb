@@ -15,6 +15,7 @@ class TestRoom < MiniTest::Test
         @room2 = Room.new("2", 20,  [])
 
         @guest1 = Guest.new("Janine", 100, "Don't stop me now")
+        @guest2 = Guest.new("Jason", 50, "Believer")
     end
 
     def test_room_can_have_id()
@@ -39,8 +40,10 @@ class TestRoom < MiniTest::Test
     end
 
     def test_guest_can_check_out
-        @room1.check_out(@guest3)
-        assert_equal(3, @room1.occupants.count)
+        @room2.check_in(@guest1)
+        @room2.check_in(@guest2)
+        @room2.check_out(@guest1)
+        assert_equal(1, @room2.occupants.count)
     end
 
 end

@@ -12,4 +12,8 @@ class Room
         @occupants << guest
     end
 
+    def check_out(guest)
+        @occupants.delete(guest) if(@occupants.include?(guest))
+    end
+
 end
