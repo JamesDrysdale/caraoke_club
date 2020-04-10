@@ -26,4 +26,8 @@ class TestRoom < MiniTest::Test
         assert_equal(4, @room1.occupants.count)
     end
 
+    def test_room_can_have_occupants__no_occupants
+        assert_equal(0, @room2.occupants.count)
+    end
+
 end
