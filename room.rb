@@ -8,4 +8,8 @@ class Room
         @occupants = occupants # Array of guests who are in the room
     end
 
+    def check_in(guest)
+        @occupants << guest
+    end
+
 end

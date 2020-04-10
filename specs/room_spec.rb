@@ -3,6 +3,7 @@ require('minitest/reporters')
 Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 
 require_relative( '../room' )
+require_relative( '../guest' )
 
 
 class TestRoom < MiniTest::Test
@@ -12,6 +13,8 @@ class TestRoom < MiniTest::Test
     def setup
         @room1 = Room.new("1", 12,["Janine", "Rowan", "Mike", "Mimi"])
         @room2 = Room.new("2", 20,  [])
+
+        @guest1 = Guest.new("Janine", 100, "Don't stop me now")
     end
 
     def test_room_can_have_id()
@@ -28,6 +31,11 @@ class TestRoom < MiniTest::Test
 
     def test_room_can_have_occupants__no_occupants
         assert_equal(0, @room2.occupants.count)
+    end
+
+    def test_guest_can_check_in
+        @room2.check_in(@guest1)
+        assert_equal(1, @room2.occupants.count)
     end
 
 end
