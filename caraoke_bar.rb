@@ -6,4 +6,8 @@ class CaraokeBar
         @rooms = []
     end
 
+    def count_rooms()
+        return @rooms.count
+    end
+
 end
