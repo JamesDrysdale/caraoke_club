@@ -26,6 +26,7 @@ class TestRoom < MiniTest::Test
         assert_equal("1", @room1.id)
     end
 
+
     def test_room_can_have_max_capacity
         assert_equal(20, @room2.capacity)
     end
