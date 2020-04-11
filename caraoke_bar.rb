@@ -10,4 +10,8 @@ class CaraokeBar
         return @rooms.count
     end
 
+    def add_room(room)
+        @rooms << (room)
+    end
+
 end

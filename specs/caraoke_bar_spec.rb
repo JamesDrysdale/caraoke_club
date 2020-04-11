@@ -27,11 +27,11 @@ class TestCaraokeBar < MiniTest::Test
         assert_equal(0, @caraoke_bar.count_rooms)
     end
 
-    # def test_caraoke_bar_can_have_rooms
-    #     @caraoke_bar.add_room(@room1)
-    #     @caraoke_bar.add_room(@room1)
-    #     assert_equal(2, @caraoke_bar.room_count)
-    # end
+    def test_caraoke_bar_can_have_rooms
+        @caraoke_bar.add_room(@room1)
+        @caraoke_bar.add_room(@room1)
+        assert_equal(2, @caraoke_bar.count_rooms)
+    end
 
 
 end
