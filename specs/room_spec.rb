@@ -12,8 +12,8 @@ class TestRoom < MiniTest::Test
     # A room has an ID(room number), capacity and occupancy
 
     def setup
-        @room1 = Room.new("1", 12,["Janine", "Rowan", "Mike", "Mimi"])
-        @room2 = Room.new("2", 20,  [])
+        @room1 = Room.new("1", 12,["Janine", "Rowan", "Mike", "Mimi"], 40)
+        @room2 = Room.new("2", 20,  [], 30)
 
         @guest1 = Guest.new("Janine", 100, "Don't stop me now")
         @guest2 = Guest.new("Jason", 50, "Believer")
@@ -25,7 +25,6 @@ class TestRoom < MiniTest::Test
     def test_room_can_have_id()
         assert_equal("1", @room1.id)
     end
-
 
     def test_room_can_have_max_capacity
         assert_equal(20, @room2.capacity)
@@ -63,6 +62,10 @@ class TestRoom < MiniTest::Test
         @room1.add_song(@song1)
         @room1.add_song(@song2)
         assert_equal(2, @room1.number_of_songs)
+    end
+
+    def test_ceach_room_can_have_entry_fee
+        assert_equal(30, @room2.entry_fee)
     end
 
 

@@ -1,12 +1,13 @@
 class Room
 
-    attr_reader :id, :capacity, :occupants, :playlist 
+    attr_reader :id, :capacity, :occupants, :playlist, :entry_fee 
 
-    def initialize(id, capacity, occupants)
+    def initialize(id, capacity, occupants, entry_fee)
         @id = id # Room number
         @capacity = capacity # Total number of people each room can hold
         @occupants = occupants # Array of guests who are in the room
         @playlist = []
+        @entry_fee = entry_fee # Per hour
     end
 
 

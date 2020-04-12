@@ -4,6 +4,7 @@ Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 
 require_relative( '../caraoke_bar' )
 require_relative( '../room' )
+require_relative( '../guest')
 
 
 class TestCaraokeBar < MiniTest::Test
@@ -11,8 +12,10 @@ class TestCaraokeBar < MiniTest::Test
     def setup
         @caraoke_bar = CaraokeBar.new("Sunset Sirens")
 
-        @room1 = Room.new("1", 12,["Janine", "Rowan", "Mike", "Mimi"])
-        @room2 = Room.new("2", 20,  [])
+        @room1 = Room.new("1", 12,["Janine", "Rowan", "Mike", "Mimi"], 40)
+        @room2 = Room.new("2", 20,  [], 30)
+
+        @cguest1 = Guest.new("Janine", 100, "Don't stop me now")
     end
 
     def test_caraoke_bar_can_have_name
@@ -37,8 +40,10 @@ class TestCaraokeBar < MiniTest::Test
         assert_equal(50, @caraoke_bar.till)
     end
 
-    def test_caraoke_bar_can_have_entry_fee
-        assert_equal(30, @caraoke_bar.entry_fee)
-    end
+
+
+    # def test_till_can_receive_entry_fee_from_guest
+    #     assert_equal(80, @caraoke_bar.till)
+    # end
 
 end
