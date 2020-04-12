@@ -4,7 +4,7 @@ class Room
 
     def initialize(id, capacity, occupants)
         @id = id # Room number
-        @capacity = capacity
+        @capacity = capacity # Total number of people each room can hold
         @occupants = occupants # Array of guests who are in the room
         @playlist = []
     end
