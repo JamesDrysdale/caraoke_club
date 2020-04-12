@@ -33,5 +33,8 @@ class TestCaraokeBar < MiniTest::Test
         assert_equal(2, @caraoke_bar.count_rooms)
     end
 
+    def test_caraoke_bar_can_have_till
+        assert_equal(50, @caraoke_bar.till)
+    end
 
 end
