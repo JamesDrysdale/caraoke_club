@@ -37,4 +37,8 @@ class TestCaraokeBar < MiniTest::Test
         assert_equal(50, @caraoke_bar.till)
     end
 
+    def test_caraoke_bar_can_have_entry_fee
+        assert_equal(30, @caraoke_bar.entry_fee)
+    end
+
 end

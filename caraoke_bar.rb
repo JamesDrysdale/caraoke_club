@@ -1,10 +1,11 @@
 class CaraokeBar
-    attr_reader :name, :till, :rooms
+    attr_reader :name, :till, :rooms, :entry_fee
 
     def initialize(name)
         @name = name
-        @till = 50 # Till starts with a £50 float each day
         @rooms = []
+        @till = 50 # Till starts with a £50 float each day
+        @entry_fee = 30 # Per hour
     end
 
     def count_rooms()
